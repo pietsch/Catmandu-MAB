@@ -1,0 +1,14 @@
+Changes
+lib/Catmandu/Fix/mab_in_json.pm
+lib/Catmandu/Fix/mab_map.pm
+lib/Catmandu/Fix/mab_xml.pm
+lib/Catmandu/Importer/MAB.pm
+lib/Catmandu/MAB.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+t/00-load.t
+t/01-importer.t
+t/records.dat
+t/manifest.t
+t/pod.t
