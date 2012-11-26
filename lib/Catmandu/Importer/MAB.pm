@@ -48,7 +48,7 @@ sub mab_generator {
             # ToDo: what do these elements '_' and '' stand for?
             # push @sf , '_' , ($field->is_control_field ? $field->data : '');
 
-            if ( $field->data() ) {
+            if ( defined $field->data() ) {
                 push @result, [ $tag, $ind, '_', $field->data() ];
             }
             else {
