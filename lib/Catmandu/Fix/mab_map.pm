@@ -105,12 +105,11 @@ sub create_path {
 }
 
 # Parse a mab_path into parts
-#  245[1,2]abd  - field=245, ind1=1, ind2=2, subfields = a,d,d
-#  008/33-35    - field=008 from index 33 to 35
+# 245[a]abd  - field=245, ind=a, subfields = a,d,d
+# 008/33-35    - field=008 from index 33 to 35
 sub parse_mab_path {
     my $path = shift;
 
-    # if ($path =~ /(\S{3})(\[(.)\])?([_a-z0-9]+)?(\/(\d+)(-(\d+))?)?/) {
     # more than 1 indicator allowed:
     if ( $path =~ /(\S{3})(\[(.+)\])?([_a-z0-9]+)?(\/(\d+)(-(\d+))?)?/ ) {
         my $field    = $1;
@@ -157,7 +156,7 @@ sub mab_field {
     return \@results;
 }
 
-# Given a subarray of Catmandu::Importer::MARC subfields return all
+# Given a subarray of Catmandu::Importer::MAB subfields return all
 # the subfields that match the $subfield regex
 # Usage: mab_subfield($subfields,'[a]');
 sub mab_subfield {

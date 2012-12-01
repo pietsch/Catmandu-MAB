@@ -10,6 +10,6 @@ README
 t/00-load.t
 t/01-importer.t
 t/boilerplate.t
-/manifest.t
+t/manifest.t
 t/pod.t
 t/records.dat

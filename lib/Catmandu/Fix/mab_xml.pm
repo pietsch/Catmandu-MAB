@@ -13,7 +13,7 @@ around BUILDARGS => sub {
     $orig->( $class, path => $p, key => $key );
 };
 
-# Transform a raw MAB array into MACxml
+# Transform a raw MAB array into MABxml
 sub fix {
     my ( $self, $data ) = @_;
 
@@ -60,7 +60,7 @@ sub mab_datafield {
         . "\" ind=\""
         . xml_escape($ind) . "\">";
 
-    if ( $subfields[0] eq '_' ) {
+    if ( $subfields[1] ) {
         $buffer .= xml_escape( $subfields[1] );
     }
     else {

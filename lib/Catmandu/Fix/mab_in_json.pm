@@ -29,9 +29,6 @@ sub fix {
         else {
             my @subfields = ();
 
-            # for (my $i = 2 ; $i < @data ; $i += 2) {
-            # push @subfields , { $data[$i] => $data[$i+1] };
-            # }
             while ( defined( my $subfield = shift @data ) ) {
                 push @subfields, { $subfield => shift @data };
             }

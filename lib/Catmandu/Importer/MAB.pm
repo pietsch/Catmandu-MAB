@@ -107,21 +107,23 @@ identifier of the record) and 'record' containing an ARRAY of ARRAYs for every f
 
  {
   'record' => [
-                      [
-                        '001',
-                        ' ',
-                        '_',
-                        'fol05882032 '
-                      ],
- 		      [
-                        245,
-                        'a',
-                        'a',
-                        'Cross-platform Perl /',
-                        'c',
-                        'Eric F. Johnson.'
-                      ],
-	      ],
+                [
+                    '001',
+                    ' ',
+                    '_',
+                    'fol05882032 '
+                ],
+                [
+                    245,
+                    'a',
+                    '_',
+                    '',
+                    'a',
+                    'Cross-platform Perl /',
+                    'c',
+                    'Eric F. Johnson.'
+                ],
+        ],
   '_id' => 'fol05882032'
  } 
 
