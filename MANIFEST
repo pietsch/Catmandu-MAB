@@ -9,6 +9,7 @@ MANIFEST			This list of files
 README
 t/00-load.t
 t/01-importer.t
-t/records.dat
-t/manifest.t
+t/boilerplate.t
+/manifest.t
 t/pod.t
+t/records.dat

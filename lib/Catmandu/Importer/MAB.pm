@@ -55,7 +55,7 @@ sub mab_generator {
                 for my $subfield ( $field->subfields() ) {
                     push @sf, @{$subfield};
                 }
-                push @result, [ $tag, $ind, @sf ];
+                push @result, [ $tag, $ind, '_', '', @sf ];
             }
 
         }
