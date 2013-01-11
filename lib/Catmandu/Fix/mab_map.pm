@@ -24,8 +24,11 @@ around BUILDARGS => sub {
 
 sub fix {
     my ( $self, $data ) = @_;
+
     my $path  = $self->path;
+    # '$append'
     my $key   = $self->key;
+    # '655'
     my $mpath = $self->mpath;
     my $opts  = $self->opts || {};
     $opts->{-join} = '' unless $opts->{-join};
@@ -34,6 +37,8 @@ sub fix {
     my $mab = $data->{$mab_pointer};
 
     my $fields = mab_field( $mab, $mpath );
+
+    return $data if !@{$fields};
 
     my $match
         = [ grep ref, data_at( $path, $data, key => $key, create => 1 ) ]
@@ -69,7 +74,6 @@ sub fix {
             }
         }
     }
-
     $data;
 }
 
