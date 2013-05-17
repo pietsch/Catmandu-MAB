@@ -26,9 +26,7 @@ sub fix {
     my ( $self, $data ) = @_;
 
     my $path  = $self->path;
-    # '$append'
     my $key   = $self->key;
-    # '655'
     my $mpath = $self->mpath;
     my $opts  = $self->opts || {};
     $opts->{-join} = '' unless $opts->{-join};
