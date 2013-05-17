@@ -2,6 +2,7 @@ package Catmandu::Fix::mab_in_json;
 
 use Catmandu::Sane;
 use Moo;
+use JSON;
 
 # Transform a raw MAB array into MAB-in-JSON
 # See Ross Singer work at:
@@ -17,18 +18,18 @@ sub fix {
     for my $f ( @{ $data->{record} } ) {
         my ( $tag, $ind, @data ) = @$f;
 
-        if ( $tag eq 'LDR' ) {
-            $mij->{leader} = $data[1];
-        }
-        elsif ( $data[0] eq '_' ) {
+        my $delimiter = shift @data;
+        my $data = shift @data;
 
-            # shift @data;
+        if ( $tag eq 'LDR' ) {
+            $mij->{leader} = $data;
+        }
+        elsif ( $data ) {
             push @{ $mij->{fields} },
-                { $tag => { data => $data[1], ind => $ind } };
+                { $tag => { data => $data, ind => $ind } };
         }
         else {
             my @subfields = ();
-
             while ( defined( my $subfield = shift @data ) ) {
                 push @subfields, { $subfield => shift @data };
             }
